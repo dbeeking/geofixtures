@@ -1,0 +1,45 @@
+name: GeoFixtures
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  fixtures:
+    runs-on: ubuntu-latest
+    env:
+      GEOFIXTURES_REPOSITORY: ${{ vars.GEOFIXTURES_REPOSITORY }}
+      GEOFIXTURES_REF: ${{ vars.GEOFIXTURES_REF }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Check the GeoFixtures pin
+        run: |
+          if [ -z "$GEOFIXTURES_REPOSITORY" ] || [ -z "$GEOFIXTURES_REF" ]; then
+            echo "Set the GEOFIXTURES_REPOSITORY and GEOFIXTURES_REF repository variables." >&2
+            exit 1
+          fi
+      - uses: mamba-org/setup-micromamba@v2
+        with:
+          environment-name: pdal
+          create-args: pdal
+          condarc: |
+            channels:
+              - conda-forge
+      - name: Link PDAL
+        run: sudo ln -s "$MAMBA_ROOT_PREFIX/envs/pdal/bin/pdal" /usr/local/bin/pdal
+      - name: Install
+        run: |
+          python -m pip install -e .
+          python -m pip install "geofixtures[all] @ git+https://github.com/${GEOFIXTURES_REPOSITORY}@${GEOFIXTURES_REF}"
+      - name: Run fixtures
+        run: >
+          geofixtures run --adapter landfuse --select suite:landfuse --timeout 300
+          --policy .github/geofixtures-policy.toml --report geofixtures.xml --format junit
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: geofixtures-report
+          path: geofixtures.xml

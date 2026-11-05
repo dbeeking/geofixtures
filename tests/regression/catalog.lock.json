@@ -1,0 +1,439 @@
+{
+  "crs.axis_order.001": {
+    "files": {
+      "input/features.geojson": "afcc69fd313eed412205877d07517d99ecbe728006a86ba30069302209c2d79e",
+      "truth/expected.json": "4ae87a76e5e160f26ff3d626eccf852ca063c2c728e948638988db22f8222c9a"
+    },
+    "meaning": "49e115a7e9059cdb659181d35476c6fdabfb3c6aaff8a57b9a54b67f3eddb3ae",
+    "truth": "4ae87a76e5e160f26ff3d626eccf852ca063c2c728e948638988db22f8222c9a",
+    "version": "1.0.0"
+  },
+  "crs.mislabeled.001": {
+    "files": {
+      "input/features.parquet": "fe2bf962aaa7c0e2b159b70e28311b3d2d77234610743b9f6da033948c115016",
+      "truth/expected.json": "ce70d2d00ee3ca1934165150e4bc9964d1f1806b2eaef33aa0620bbf374d3dc0"
+    },
+    "meaning": "c7b8e4f3aadbd62740eef2a541c63018b1f9f558dd2bed666c72eee4673e084f",
+    "truth": "ce70d2d00ee3ca1934165150e4bc9964d1f1806b2eaef33aa0620bbf374d3dc0",
+    "version": "1.0.0"
+  },
+  "crs.transform.001": {
+    "files": {
+      "input/controls.geojson": "43b04aa638a793df3deb5ff4ebd96b837b30bebb5858702122b6ccff5e9ca795",
+      "truth/expected.json": "1d7087853b72e92d2bbe32354acc00cb70254aa9a4cb56f024a9f7683fe970b4"
+    },
+    "meaning": "001da5fd2ee74577a8dfd4c308ef58de193e4ac7adc96acf219ddb5de7a05a4e",
+    "truth": "1d7087853b72e92d2bbe32354acc00cb70254aa9a4cb56f024a9f7683fe970b4",
+    "version": "1.0.0"
+  },
+  "crs.units.001": {
+    "files": {
+      "input/lines.parquet": "b710342344133dcb7e42f831e19b1ecb9da0855af83d109b30c0c9bf93d33cdc",
+      "truth/expected.json": "9ce55c074a283f2ecae1a6e68c2e48da3de6550bcb9c01190316494ee548e592"
+    },
+    "meaning": "cd73d143c0f7198af4baba1699b0da0d2aa1e3db8416ab1b39ca79a1e75570f7",
+    "truth": "9ce55c074a283f2ecae1a6e68c2e48da3de6550bcb9c01190316494ee548e592",
+    "version": "1.0.0"
+  },
+  "crs.vertical_datum.001": {
+    "files": {
+      "input/candidate.parquet": "995f3ecc8ed0a62eda53abed5428ff084381e8ca962ccc568c7ed92534c13b6d",
+      "input/reference.parquet": "995f3ecc8ed0a62eda53abed5428ff084381e8ca962ccc568c7ed92534c13b6d",
+      "truth/expected.json": "0d765af8c5a33869f00b2512dd607adc8ceebcdc31164ccb342ed77961312a22"
+    },
+    "meaning": "bdadb87c0a8582b3572aeaf27d67a575a327e0fddcd21fa185883cf8d78bb450",
+    "truth": "0d765af8c5a33869f00b2512dd607adc8ceebcdc31164ccb342ed77961312a22",
+    "version": "1.0.0"
+  },
+  "ingest.deletion.001": {
+    "files": {
+      "input/after.geojson": "3717b9c3a99166f1372fd8530830436f3c3654e2ca90179fc91b7c23a703f195",
+      "input/before.geojson": "751e73aaf273b808b144af559cf3550012f41e7c0427af7ad18df691a6cd293f",
+      "truth/expected.json": "8d13968bafec7dee23b1b6c6a33a1c457ba974ed03f5bd58cb95dd10ca24282a"
+    },
+    "meaning": "cee3b7bae7a9cbaa51e730c35e1377e49f7d151093081f5342821008738bdfad",
+    "truth": "8d13968bafec7dee23b1b6c6a33a1c457ba974ed03f5bd58cb95dd10ca24282a",
+    "version": "1.0.0"
+  },
+  "ingest.integrity.001": {
+    "files": {
+      "input/source.geojson": "c058b871691d2f2008ca600be1e473b8d4b0577dd18d2d1cecdf89507515a1df",
+      "input/source.geojson.sha256": "edd0b15fe5c72dd28be880bfddd1e11cb8352a07c54490aa6db09afc0b06d9f7",
+      "truth/expected.json": "03e03c468f466e0d71ca735a03506dd02fe34e64afa1a5e532f09408fb28c770"
+    },
+    "meaning": "99db4d72248587763bd937435c0fffeb2e6c5ec06c0be4d2e6070e63be51249e",
+    "truth": "03e03c468f466e0d71ca735a03506dd02fe34e64afa1a5e532f09408fb28c770",
+    "version": "1.0.0"
+  },
+  "ingest.pagination.001": {
+    "files": {
+      "input/index.json": "b613ea27c4b73b8da9b63923522d5688fcef3affa0de7f681f46208c496741bb",
+      "input/page_001.geojson": "78d83b141395a4bbb4ee88be4bcf79797a39f09b029992e024e984d77ab2d43b",
+      "input/page_002.geojson": "175e5a369ba085bc53e9e52309f4bc409f7c0d34d83f703bff037b973fe08971",
+      "input/page_004.geojson": "36c8da20eaab6a9c7b5c1c343a271d2935dfdf75b2ac9433e13d27934c97b5ab",
+      "input/page_005.geojson": "bb19380550dca33d99c5a698145036a0337c1820198e9190c76b4bbe1beb4ef8",
+      "truth/expected.json": "274e1f7cb8ad33efaded2fa79e84619a7f56c8f70bb0889d06cc6bc60f150101"
+    },
+    "meaning": "23566ef9ed6b62f63edac843a82f232cc836ed8abb4aa7c1d7192e3d39d78372",
+    "truth": "274e1f7cb8ad33efaded2fa79e84619a7f56c8f70bb0889d06cc6bc60f150101",
+    "version": "1.0.0"
+  },
+  "ingest.schema_added.001": {
+    "files": {
+      "input/after.parquet": "935a07933ba4978e8a52a3f62a8d61fbfd8d49f6649322e7f4f2bb8d21de86e3",
+      "input/before.parquet": "e3885c1f42cd18f8c6420d3bd5466a4646ef0be7ae2a7e4123bece87abf12b7d",
+      "truth/expected.json": "fb4f40ee29003e4f73f4b1e02521ff553220ce8bbb9637f84b2905ef95616114"
+    },
+    "meaning": "30ba1bc81fd737c5722fe07d33c938b70afb90a992156ec4e66fb3457ec34160",
+    "truth": "fb4f40ee29003e4f73f4b1e02521ff553220ce8bbb9637f84b2905ef95616114",
+    "version": "1.0.0"
+  },
+  "ingest.split_merge.001": {
+    "files": {
+      "input/after.parquet": "f0ddde645de3db60838ac5798454791bf93ea025624ada9afd71442932d41b1f",
+      "input/before.parquet": "262f0dd70ead85dd18f2142cdf3321fa127ec996eb3958db019ec7ac4ce2f88f",
+      "truth/expected.json": "2b0ee6c55b3a76206cb305af845158188f6cf14e465d81e2793bcf17d87a3227"
+    },
+    "meaning": "9cb245477f48433bfd5b99ce1542404908a8cf62548a531c0fcc6bf5bf507419",
+    "truth": "2b0ee6c55b3a76206cb305af845158188f6cf14e465d81e2793bcf17d87a3227",
+    "version": "1.0.0"
+  },
+  "ingest.unchanged_count.001": {
+    "files": {
+      "input/after.geojson": "a03dcd48c4354dcb23b334183d277e22522fed94ac7a71ff43c84b392c4e3444",
+      "input/before.geojson": "59dbe8e165d4f07fdead96672da5b4680e55e552bffab0dbc650f9a3f503b600",
+      "truth/expected.json": "9f70223ed4a75050d1105e05577ef16713e6d2334545c1a6b430052bd4088b22"
+    },
+    "meaning": "2f1e1d1f6e036aa8ac246e90963a66298a79bca3e2de47383b57f7155e371e32",
+    "truth": "9f70223ed4a75050d1105e05577ef16713e6d2334545c1a6b430052bd4088b22",
+    "version": "1.0.0"
+  },
+  "landcover.date_mismatch.001": {
+    "files": {
+      "input/dem.tif": "94be5652009f5938fa2f42f259906674ded3acc56a43466095112fd9e7bfa54e",
+      "input/imagery.tif": "2a263ac19a354c8c2f8b0c6f0ce815b8433eaaed8e9002a5c0746af306c7c6bc",
+      "truth/expected.json": "7cf50d3c6ac5ef50d5f357a7f82b744c296c0db4bdc16e51bf19bb18e1353acc"
+    },
+    "meaning": "d22cc669ca256d2b39100c665d1d986dd4149ab6512eaa3e10cd3ea62a9be05f",
+    "truth": "7cf50d3c6ac5ef50d5f357a7f82b744c296c0db4bdc16e51bf19bb18e1353acc",
+    "version": "1.0.0"
+  },
+  "landcover.image_collar.001": {
+    "files": {
+      "input/test_imagery.tif": "03942cf0925e93eec10000162e47cace7036089d66a7ee35664413954d55ca09",
+      "input/test_terrain.tif": "04173f9dd03814bc2007ee7e5fddee6af2ee347b3e43d0530d472e69201b75ed",
+      "input/train_imagery.tif": "fad4640e1fdcd7cfe4139d919f60cb65a3149a0180bc6dd4c07cd841bad63ac2",
+      "input/train_labels.tif": "280416b4df11c282a67c71547ce490e4315eecce2726a7ec75bca6ca0124af36",
+      "input/train_terrain.tif": "04173f9dd03814bc2007ee7e5fddee6af2ee347b3e43d0530d472e69201b75ed",
+      "truth/collar.tif": "ec90a74c7cfc0fe380802300a87ab743317f06933dd1b89c134af59f7aa450cd",
+      "truth/expected.json": "ff8fb369bd8aa5df4a7f898536f8fd83298251dc4efbf18663eb7f3983449ded",
+      "truth/labels.tif": "b7ac210b9c38be4123ddd4f9857e185286d62a4d5634c699590439fb184495f7"
+    },
+    "meaning": "cd0eb9ad8b8cd0ecc244cca89d0f42a9566b08fd6f878f9b00ff098f8e22cd5c",
+    "truth": "ff8fb369bd8aa5df4a7f898536f8fd83298251dc4efbf18663eb7f3983449ded",
+    "version": "1.0.0"
+  },
+  "landcover.missing_nir.001": {
+    "files": {
+      "input/dem.tif": "94be5652009f5938fa2f42f259906674ded3acc56a43466095112fd9e7bfa54e",
+      "input/imagery.tif": "7e11a18cf241e387e435db651c3f10dbe8eaa2d05ecf7abb760bba7ef6170726",
+      "truth/expected.json": "98d7c6db26a65d6cd03238b29666cd216276bf3e93152fc3116dbdc49891125d"
+    },
+    "meaning": "872b104b683ef726409903c285580d5a6ab475988dcaaeb5e12ce661118181d2",
+    "truth": "98d7c6db26a65d6cd03238b29666cd216276bf3e93152fc3116dbdc49891125d",
+    "version": "1.0.0"
+  },
+  "landcover.pair.dem.001": {
+    "files": {
+      "input/dem.tif": "94be5652009f5938fa2f42f259906674ded3acc56a43466095112fd9e7bfa54e",
+      "input/imagery.tif": "2a263ac19a354c8c2f8b0c6f0ce815b8433eaaed8e9002a5c0746af306c7c6bc",
+      "truth/expected.json": "d8765a67ac3fe141735acd2dea2f4cae0f4ccceba8ecefa38449ed7e5b571bc7"
+    },
+    "meaning": "39f190ea7057f06d01da926960ec42f94d20ac1b9f12b73c62c283a5793261ed",
+    "truth": "d8765a67ac3fe141735acd2dea2f4cae0f4ccceba8ecefa38449ed7e5b571bc7",
+    "version": "1.0.0"
+  },
+  "landcover.pair.lidar.001": {
+    "files": {
+      "input/imagery.tif": "e54a37002bad9090f296682480b2f128df5e5ed3ec6eaa5a25bcc4229f31cb53",
+      "input/points.las": "080d41d8d58fbca682c363996969b6efc36bfe2dedb6edb7c73db22f0b035a88",
+      "truth/chm.tif": "21d976d262f50f0bc1d88cb481fda65b6c3768da65b60e94d8ff78d455e38984",
+      "truth/edge_band.tif": "3f216f0c6b6bea03b979ba8bf442b7211d39e8f1f867043e6833de9e899bdab4",
+      "truth/expected.json": "6737280a8649d23253a1b01cd6fb8de22bc47370165975d263a6c9abc10234ac",
+      "truth/roof_interior.tif": "0c2b6b743e9e7c2ba1c19aa515c440ca4edb08e32f1e87797c112abdd3ed72d1"
+    },
+    "meaning": "7d5af787a4d62e43e7c15a590ab80dc34085a030266e994825e4f108ec6f79d3",
+    "truth": "6737280a8649d23253a1b01cd6fb8de22bc47370165975d263a6c9abc10234ac",
+    "version": "1.0.0"
+  },
+  "landcover.sampling_spread.001": {
+    "files": {
+      "input/test_imagery.tif": "7db3772578da4100dc696e2d35571f3fec3654d174ae46d6260beb8552d15fde",
+      "input/test_terrain.tif": "4e3de7e6e977afa7ef362dde4bb08400e1ab2c41a668feeb7f5e204f592e3149",
+      "input/train_imagery.tif": "86c79c2182aea8f4b614c682e0853e06a4a9f2f00ba4e8d1f3baef83063d75a9",
+      "input/train_labels.tif": "201cb0892be00d4bda5bea5c552b0c6391f32e3e2632112af7981f388f7604a0",
+      "input/train_terrain.tif": "4e3de7e6e977afa7ef362dde4bb08400e1ab2c41a668feeb7f5e204f592e3149",
+      "truth/expected.json": "98979b0f6457b6c16986aa313c17c680b32b42cfa066162fe078158d8db6df84",
+      "truth/labels.tif": "5f87f811ebdd8ea63a69f2a5f8e04c0a8e81fa249e464b7636e52bd07880c6f9"
+    },
+    "meaning": "73fcc762fb391d3a4d8c72d6239811bceb772baf36e5f02563c5f7f24b586759",
+    "truth": "98979b0f6457b6c16986aa313c17c680b32b42cfa066162fe078158d8db6df84",
+    "version": "1.0.0"
+  },
+  "landcover.scene.rgbnir.001": {
+    "files": {
+      "input/test_imagery.tif": "a3f31c1897b6c2ed1412f447c75385e9c162f26e392670f304221440f8f511fe",
+      "input/test_terrain.tif": "04173f9dd03814bc2007ee7e5fddee6af2ee347b3e43d0530d472e69201b75ed",
+      "input/train_imagery.tif": "fad4640e1fdcd7cfe4139d919f60cb65a3149a0180bc6dd4c07cd841bad63ac2",
+      "input/train_labels.tif": "280416b4df11c282a67c71547ce490e4315eecce2726a7ec75bca6ca0124af36",
+      "input/train_terrain.tif": "04173f9dd03814bc2007ee7e5fddee6af2ee347b3e43d0530d472e69201b75ed",
+      "truth/expected.json": "ebccc71cf957b18d72e6a074a8212cbcc192bec62ad195394fd9d6759cadc034",
+      "truth/labels.tif": "ad37ae206b8954990458ca83fa855a899dc9c2656f1921092cef44c0e5178624"
+    },
+    "meaning": "4af89c466a43081310f261f659ba8228f185de237e46e264f27a49495ff4e93d",
+    "truth": "ebccc71cf957b18d72e6a074a8212cbcc192bec62ad195394fd9d6759cadc034",
+    "version": "1.0.0"
+  },
+  "landcover.spatial_leakage.001": {
+    "files": {
+      "input/imagery.tif": "3e4367771954f3002eeff1f95902cf73d58503625ec7ed8bbb6707f18c200998",
+      "input/labels.tif": "0aa74ca5a064a0f039d91e5404a9527a48cd9f5738d4c5750fc437ae52a96d11",
+      "input/terrain.tif": "dde05d66c0e8b16f0bcd6f5c3c5ed3ca540570f7db83479ea44ca7ea5f0ae206",
+      "truth/expected.json": "8cbfeb68939d1821ff8045c8eaef80cf21d7c903cf65e97e9e1fcc7ec849b7ca"
+    },
+    "meaning": "5bebfe6163b9875286237e4dd6eaf0bef60a74823c736ccdc149060ef7ad95cc",
+    "truth": "8cbfeb68939d1821ff8045c8eaef80cf21d7c903cf65e97e9e1fcc7ec849b7ca",
+    "version": "1.0.0"
+  },
+  "landcover.truth_mask.001": {
+    "files": {
+      "input/prediction.tif": "acda29c89902671fbe6b933a3dd6f065f11c56460140f033a58d65c9479e678f",
+      "input/reference.tif": "392041e3f736c712595108ebf46e51b8585f6ea8440f4ad06dd43227afb4318d",
+      "truth/expected.json": "ba399b64f1029d6b4a8688c5408280311fa37d8f2009a703c1e46250abb18ed5"
+    },
+    "meaning": "8e3929029f1df8ec4ebc11dc459658bfc302594fcb80e4a53f3e6781941d3c7e",
+    "truth": "ba399b64f1029d6b4a8688c5408280311fa37d8f2009a703c1e46250abb18ed5",
+    "version": "1.0.0"
+  },
+  "landcover.unknown.001": {
+    "files": {
+      "input/prediction.tif": "5dbe45860e8cc57670775b5025416de16eb4035a6c6ad96b6634096ae6194baa",
+      "input/reference.tif": "115a8c6c4936f048d9a3aec7d329345ae3d662398baaa9fb834d189701f910be",
+      "truth/expected.json": "0803ef29fe64acea4de2fcb17f219bc2330088ac1add6b266da61ea8c1122e4f"
+    },
+    "meaning": "19d606d81aebd99a17fedefb0acb4420cf9b7cfe14fd7c484f2dfced3dac2fe5",
+    "truth": "0803ef29fe64acea4de2fcb17f219bc2330088ac1add6b266da61ea8c1122e4f",
+    "version": "1.0.0"
+  },
+  "lidar.density.001": {
+    "files": {
+      "input/points.las": "0b8ba21c1ca6707dcc3a84c63ca7e6c6e8564c993654f93395b59f7d0d38825e",
+      "truth/expected.json": "ee359f37cde990e24ff9fa2e76b2c798577c4f9765fe209e377cb2d554851148"
+    },
+    "meaning": "b0200c9888dcf10072f56a4338afe7c5444289e0e398f4f7037e3765859a4ae0",
+    "truth": "ee359f37cde990e24ff9fa2e76b2c798577c4f9765fe209e377cb2d554851148",
+    "version": "1.0.0"
+  },
+  "lidar.ground_gap.001": {
+    "files": {
+      "input/imagery.tif": "e54a37002bad9090f296682480b2f128df5e5ed3ec6eaa5a25bcc4229f31cb53",
+      "input/points.las": "53654542882b19c310a57aea1fa9eb404d31ef388bf4d759e146c5eb158b2d11",
+      "truth/chm.tif": "c7bbb92bba99e9077e8ccd084899169e9163fe48b1dc0add7ba4afc2851e30c9",
+      "truth/edge_band.tif": "c2fbb569e021ec8c93f8cc1b24ae75032dfd53cab2e6d744573eee1c0db58979",
+      "truth/expected.json": "34e653790cb5abf32debce4249ca3028f6e2858cfb98ad57def2a47676d78ccb"
+    },
+    "meaning": "99cb9e04c18ee5d434713439b88a40370cfdd4df108331cb4b70c7be178745ba",
+    "truth": "34e653790cb5abf32debce4249ca3028f6e2858cfb98ad57def2a47676d78ccb",
+    "version": "1.0.0"
+  },
+  "lidar.vertical_mismatch.001": {
+    "files": {
+      "input/dem.tif": "1d70edaea25aaba6afddcdad13444297e244b3905551aed4c174fc43f0ffe0f0",
+      "input/points.las": "4bdaebcdb0e877f964c766f4241a75b14ee522cddb4cff2e6a39ae239d645e1b",
+      "truth/expected.json": "aa6bf6ae268d28ad149456e4ce6f2440aa47784698eda0e589a4e7dcc733dabd"
+    },
+    "meaning": "f012bf936c383245c8cd7765364de6a7193fbdba9324b6203f5975feed37a035",
+    "truth": "aa6bf6ae268d28ad149456e4ce6f2440aa47784698eda0e589a4e7dcc733dabd",
+    "version": "1.0.0"
+  },
+  "raster.dem.slope.001": {
+    "files": {
+      "input/dem.tif": "3ff1eca1ff86f2d07fd6615bc891cb429b2377a16c8cd87c0465f207de824970",
+      "truth/expected.json": "a3fa8285dd5368d9b85913465540264f755c9db82ab7e6cd663b4cc90cc25a21",
+      "truth/slope.tif": "affe74b2d08c7a64e6e16fb3969dafee3876b090e593eb7706af22e6b0933457"
+    },
+    "meaning": "8d1e4b6d9ed4fb256cc1116c8ac2e4cc32ef61a8af69e0fa39a68b4a0c615aab",
+    "truth": "a3fa8285dd5368d9b85913465540264f755c9db82ab7e6cd663b4cc90cc25a21",
+    "version": "1.0.0"
+  },
+  "raster.depression.001": {
+    "files": {
+      "input/dem.tif": "e8de3bd2fecaa8faa1f77fdfa254037d2e6d80aa9481b1c1aa68861eb1a6bb8c",
+      "truth/expected.json": "89f3a7363f9a610bab8c657a0217a0bd4c7e792af9a6de919190bc2813213eb8",
+      "truth/slope.tif": "88324a53de93df5ccb88f35d88009cd577c730ab5b9ce0b66dda6d6d4ae18469"
+    },
+    "meaning": "cc6789281415ccf369b2e875b5df445bbd4793a7542a99c5b014f53b7fc407f7",
+    "truth": "89f3a7363f9a610bab8c657a0217a0bd4c7e792af9a6de919190bc2813213eb8",
+    "version": "1.0.0"
+  },
+  "raster.drainage.001": {
+    "files": {
+      "input/dem.tif": "6254b5e2c9ad1ece0672bf51570e47ac19d4e603a7eb61bfc7d216b1f34fec4a",
+      "input/flowline.parquet": "d21a08c18ef4371fe5bf935a5b2cda50e3916b6e833d1e602cbe5afa2f9d00d7",
+      "input/points.parquet": "f4b66be12cdf8863d0e94c16a6fb342ab635774ec80cfc74aa7ce68b42a31a6d",
+      "truth/expected.json": "f4f6fe7957b03fc5ff229cd9c977cab10cc6dbe3eaf0fa4ffb96f90078e4fa39"
+    },
+    "meaning": "b33805650e710f9f5b0c8016b62f237806301aa7a1e90ab5f2f643cbe1afe3a3",
+    "truth": "f4f6fe7957b03fc5ff229cd9c977cab10cc6dbe3eaf0fa4ffb96f90078e4fa39",
+    "version": "1.0.0"
+  },
+  "raster.grid.offset.001": {
+    "files": {
+      "input/dem.tif": "3ff1eca1ff86f2d07fd6615bc891cb429b2377a16c8cd87c0465f207de824970",
+      "input/imagery.tif": "d6a6e59bc09cf8a7e81dd46b1633cdc617bd5ca2b52b93e5d26cb41f54babad5",
+      "truth/expected.json": "32bb9c749817a3efaa17170a56a254a2d14a986ba0ce1eabf63e6045a25191dc"
+    },
+    "meaning": "f1997c1b8569d8109fb5c6cf135cb9faaea06cc05b4574dce66b20c15da6bcdc",
+    "truth": "32bb9c749817a3efaa17170a56a254a2d14a986ba0ce1eabf63e6045a25191dc",
+    "version": "1.0.0"
+  },
+  "raster.nodata_hole.001": {
+    "files": {
+      "input/dem.tif": "da71515b890227f7645ab7cd13fc06d299a90564dcab07928d7ae024ce7fc7ea",
+      "truth/expected.json": "61f8006638bf8e8db6f7dbf7fcade8e46ad411d0b058cfc84aed07fc50318212",
+      "truth/hole_ring.tif": "2d945fdb59372056b4e6f528eb452573e93b7334c0cad29d790b2c3f96489e53",
+      "truth/slope.tif": "7e44d831f96f29d0aa74adabfab01911fc27452fe4d48369a73698cc9a70c5e3"
+    },
+    "meaning": "ca2c0a1387214a8fbc7349379418f31bdbb9728c9db96b5074ee1e7437766f0d",
+    "truth": "61f8006638bf8e8db6f7dbf7fcade8e46ad411d0b058cfc84aed07fc50318212",
+    "version": "1.0.0"
+  },
+  "raster.partial_coverage.001": {
+    "files": {
+      "input/dem.tif": "d2cfdba1a2132f9c5ca55ba7af6c4000e23a61f6e304a7635f00cdd08e873f91",
+      "input/imagery.tif": "d6a6e59bc09cf8a7e81dd46b1633cdc617bd5ca2b52b93e5d26cb41f54babad5",
+      "truth/expected.json": "4254f521bc69cc8fcc07be99aab5e0936b995ccbdda175c8711fa4c76cc33807"
+    },
+    "meaning": "505e701d1e60a509083903ca1039acdc721e8056bc7c0d8d1dba07b7941b53fe",
+    "truth": "4254f521bc69cc8fcc07be99aab5e0936b995ccbdda175c8711fa4c76cc33807",
+    "version": "1.0.0"
+  },
+  "raster.restriction_overlay.001": {
+    "files": {
+      "input/base.tif": "2045691c1c47d968e69dfb0425ca8d0ad65a62977a6ac488f7a624c74d946485",
+      "input/restriction.parquet": "52a97ed266267d8efb3696fc41dc845cb59499535338e984f8aa3a14f53505af",
+      "truth/expected.json": "2d0cda4e210398f045d5a2a7f4bc376b2b74de8bb6eb97b426946189d3d3b8dc",
+      "truth/restricted.tif": "bf16fc3113e81a13e657283bd370afe0c3e8223f46d6c8baf294016401aafa3c"
+    },
+    "meaning": "8da7de86519f18caddaebfd0287c137c5b5e100330d4db0cd4a86d5d6a8d1ca8",
+    "truth": "2d0cda4e210398f045d5a2a7f4bc376b2b74de8bb6eb97b426946189d3d3b8dc",
+    "version": "1.0.0"
+  },
+  "raster.ridge_saddle.001": {
+    "files": {
+      "input/dem.tif": "4de3148111a2a656bd8e63c8df379f200ac304cda94526916f0d8ee278c9b8b3",
+      "truth/expected.json": "02acf6c6020ee853b68e7e074c718bcdad943b28f0cb738e3c00f01a51249e69",
+      "truth/slope.tif": "697b3cd2994d0b3c54f7e66d70015488f79e12bce2713b67cb8a1cd5bb4f4c81"
+    },
+    "meaning": "8d1e4b6d9ed4fb256cc1116c8ac2e4cc32ef61a8af69e0fa39a68b4a0c615aab",
+    "truth": "02acf6c6020ee853b68e7e074c718bcdad943b28f0cb738e3c00f01a51249e69",
+    "version": "1.0.0"
+  },
+  "raster.tile_seam.001": {
+    "files": {
+      "input/dem.tif": "4a7dfae56db2738df266054bcaa112932a4a5dc15c3fe2eea4e1cdb82beb491e",
+      "truth/expected.json": "744d9025671159b32b4e8791213e508663ab14be7b3865011c2ec9bc23d52242",
+      "truth/slope.tif": "fa50902c1d3c0a49ba94d645367435655ef74dbefe762a11fd42dc915ca4391e"
+    },
+    "meaning": "cd3344995ad28e2a29b6ad37839035f1864b71a21b203c915dfba6675a89d49f",
+    "truth": "744d9025671159b32b4e8791213e508663ab14be7b3865011c2ec9bc23d52242",
+    "version": "1.0.0"
+  },
+  "raster.truncated.001": {
+    "files": {
+      "input/test_terrain.tif": "4e3de7e6e977afa7ef362dde4bb08400e1ab2c41a668feeb7f5e204f592e3149",
+      "input/train_imagery.tif": "50b10c582aa799ccad8770db331be51da7e7f56bf66d08f82bbcca90db59c417",
+      "input/train_labels.tif": "5887093f7ee0b73bb257043de829df5c31a55ec9af32e885da2ef2c7c092f421",
+      "input/train_terrain.tif": "1b90a76db4273a19d2284174f9c1a05128645a680894c438efec21f117ab73cf",
+      "truth/expected.json": "c1412f7853a1d25781579d36a20ea77d30ccd719bde95f20de5b7eb4de258f1a"
+    },
+    "meaning": "dcddc35b437fa4700f9521716488568323ee729d0b2ea341c9cde7c1150390b0",
+    "truth": "c1412f7853a1d25781579d36a20ea77d30ccd719bde95f20de5b7eb4de258f1a",
+    "version": "1.0.0"
+  },
+  "vector.boundary.001": {
+    "files": {
+      "input/points.parquet": "ae725a93d7378dde8c1df367ddab182ddaa29581b9e334d9e041a7c44d0da6c2",
+      "input/polygon.parquet": "3a5a3d2a087eab9a3d8b7909043bd1d6f512424e165bb3394ffd6f632f863b17",
+      "truth/expected.json": "70d587dfa6ea75f1eb603ced8d688c8c505a34bea609b3d95efa0264c944bab6"
+    },
+    "meaning": "38ef60eb1da3dcce904cdc89cb3dddd1a6cbe42e2caa75050de327235f53fab3",
+    "truth": "70d587dfa6ea75f1eb603ced8d688c8c505a34bea609b3d95efa0264c944bab6",
+    "version": "1.0.0"
+  },
+  "vector.distance.001": {
+    "files": {
+      "input/line.parquet": "078bec8e3d73a74c3b28dd9347afe12e71e29bce10420cde9266f4b1e651bff6",
+      "input/points.parquet": "7bb204413b6bd0133c77d7a1e805c544eed82c40a66037da7b2220e7e4b2906a",
+      "truth/expected.json": "966e5c34fa6cc8124f1e8f491a1abb9e2ac059a4251aed318591bbbccf479203"
+    },
+    "meaning": "1adcfa53e4cf1c7d6890ffb4caceac7288705a050eeb65747dee658ee13fe00d",
+    "truth": "966e5c34fa6cc8124f1e8f491a1abb9e2ac059a4251aed318591bbbccf479203",
+    "version": "1.0.0"
+  },
+  "vector.gap.001": {
+    "files": {
+      "input/features.parquet": "0ccfa97b40dcfc036fb25405ffd40a0fba991f64519ad7d77634f57b813530f1",
+      "truth/expected.json": "dc1f2b3bf405dce59ee196511f2ebdf20ad823a624049712fed99846dab8dc58"
+    },
+    "meaning": "0f02faad8c25ca64898a77c8ff1e2c157214bdec0d05f06d8df528039227baf5",
+    "truth": "dc1f2b3bf405dce59ee196511f2ebdf20ad823a624049712fed99846dab8dc58",
+    "version": "1.0.0"
+  },
+  "vector.multipart.001": {
+    "files": {
+      "input/exclusion.parquet": "b8e76bc4c8c6cbae0b60515c0541ddd9539604af051fe2a6bc6178f009f7e292",
+      "input/study_area.parquet": "412e4890db9f9cb5b591f68d34adda25682a28af4871b8353456a372f689ab8e",
+      "truth/expected.json": "99e08d45ceb0d33afc529ffa1f245852bf2a75a3c2699da39069d9d7d8c71800"
+    },
+    "meaning": "14f4db766646240ca8a3845e728977451c4dbe22db55df0a48e3f34439df71ee",
+    "truth": "99e08d45ceb0d33afc529ffa1f245852bf2a75a3c2699da39069d9d7d8c71800",
+    "version": "1.0.0"
+  },
+  "vector.overlap.001": {
+    "files": {
+      "input/features.parquet": "2474c9a249f34886eb695ced11eb07af76cf81f2675cc27d3af2521863739e1f",
+      "truth/expected.json": "d991a1b74b2f4844922b000642a132b4d4c3d2165b301d7a3bf02b6cea60a0cf"
+    },
+    "meaning": "13dd703884f346956efeead3fb345701b52cd9ab1ece3cd25b95900e1ca410d2",
+    "truth": "d991a1b74b2f4844922b000642a132b4d4c3d2165b301d7a3bf02b6cea60a0cf",
+    "version": "1.0.0"
+  },
+  "vector.relations.001": {
+    "files": {
+      "input/features.parquet": "2c4a558eb37014b29c29d2ffd250f386bb154accabcaf790f0901ae12859e4ef",
+      "truth/expected.json": "4931aab022be4abf7d6360701f7a91a796c44a013a407e87d848737d90b16605"
+    },
+    "meaning": "2199352f31d5489214c429aaa2528b41ba6e2139f2a9fe66e9d1602e84b9aa29",
+    "truth": "4931aab022be4abf7d6360701f7a91a796c44a013a407e87d848737d90b16605",
+    "version": "1.0.0"
+  },
+  "vector.self_intersection.001": {
+    "files": {
+      "input/features.parquet": "264e89d6419070ebc8f7661162db3b9125a25481c8cdbcfefe018335d8e38f51",
+      "truth/expected.json": "628a1c5e3a704a4944e1b2c9af3cf49e701bfe477f40187333c63abe441380b3"
+    },
+    "meaning": "366d530b844246a515b72299cd82b8cd7fb6cead2f8d88527f547ea35c7d1e76",
+    "truth": "628a1c5e3a704a4944e1b2c9af3cf49e701bfe477f40187333c63abe441380b3",
+    "version": "1.0.0"
+  },
+  "vector.sliver.001": {
+    "files": {
+      "input/features.parquet": "cc8aa434d27dbad196d99aedefbac3e6a1ca3161ab34054b9db694682478b2d7",
+      "truth/expected.json": "965303423f07541b9370160b1b85f2a2c890f13fe2f36aa245f4c2e1edf3cd60"
+    },
+    "meaning": "dba2b571cd6bea4fcc4972b7ca943b1a4193401348152ce9af3db06d7b4eb930",
+    "truth": "965303423f07541b9370160b1b85f2a2c890f13fe2f36aa245f4c2e1edf3cd60",
+    "version": "1.0.0"
+  }
+}

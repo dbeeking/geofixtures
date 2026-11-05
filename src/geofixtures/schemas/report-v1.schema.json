@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://geofixtures.dev/schemas/report-v1.schema.json",
+  "title": "GeoFixtures run report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "run_id",
+    "adapter",
+    "selectors",
+    "started_at",
+    "finished_at",
+    "complete",
+    "environment",
+    "adapter_environment",
+    "summary",
+    "strict",
+    "cases"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^1\\."
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "adapter": {
+      "type": "string"
+    },
+    "selectors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "started_at": {
+      "type": "string"
+    },
+    "finished_at": {
+      "type": "string"
+    },
+    "complete": {
+      "type": "boolean"
+    },
+    "environment": {
+      "type": "object"
+    },
+    "adapter_environment": {
+      "type": "object"
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "PASS",
+        "FAIL",
+        "SKIP",
+        "UNSUPPORTED",
+        "ERROR",
+        "total"
+      ],
+      "additionalProperties": {
+        "type": "integer"
+      }
+    },
+    "cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "case_id",
+          "case_version",
+          "adapter",
+          "status",
+          "expected_status",
+          "reason",
+          "elapsed_seconds",
+          "assertions"
+        ],
+        "properties": {
+          "status": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "SKIP",
+              "UNSUPPORTED",
+              "ERROR"
+            ]
+          },
+          "elapsed_seconds": {
+            "type": "number"
+          },
+          "assertions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "assertion_id",
+                "case_id",
+                "kind",
+                "outcome",
+                "message",
+                "source_file"
+              ],
+              "properties": {
+                "outcome": {
+                  "enum": [
+                    "PASS",
+                    "FAIL",
+                    "SKIP",
+                    "UNSUPPORTED",
+                    "ERROR",
+                    "EXPECTED_REJECTION"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "strict": {
+      "type": "object",
+      "required": [
+        "enabled",
+        "allow_unsupported",
+        "violations"
+      ],
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "allow_unsupported": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "violations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "case_id",
+              "status",
+              "rule",
+              "message"
+            ],
+            "properties": {
+              "rule": {
+                "enum": [
+                  "unexpected_skip",
+                  "unexpected_unsupported",
+                  "stale_allowance"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

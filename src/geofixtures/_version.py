@@ -1,0 +1,3 @@
+__version__ = "0.1.0"
+MANIFEST_SCHEMA_VERSION = "1.0.0"
+REPORT_SCHEMA_VERSION = "1.1.0"

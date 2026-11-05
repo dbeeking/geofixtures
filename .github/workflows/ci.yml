@@ -1,0 +1,97 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Lint
+        run: |
+          ruff check src tests
+          ruff format --check src tests
+      - name: Type check
+        run: mypy src/geofixtures
+      - name: Test with coverage
+        run: |
+          coverage run --source=geofixtures -m pytest tests -q
+          coverage report --fail-under=90 --include='*/validation.py,*/materialize.py,*/registry.py,*/paths.py,*/oracles/*,*/runner/*'
+
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Build
+        run: |
+          python -m pip install build
+          python -m build
+      - name: Test the wheel in a clean environment
+        run: |
+          python -m venv /tmp/clean
+          /tmp/clean/bin/pip install "$(ls dist/*.whl)[all]"
+          cd /tmp
+          /tmp/clean/bin/geofixtures doctor
+          /tmp/clean/bin/geofixtures run --select suite:all --strict --report /tmp/report.json
+      - name: Run with no network
+        run: |
+          cd /tmp
+          sudo unshare -n /tmp/clean/bin/geofixtures run --select suite:all --strict --timeout 120
+      - name: Test the base install
+        run: |
+          python -m venv /tmp/base
+          /tmp/base/bin/pip install "$(ls dist/*.whl)"
+          cd /tmp
+          /tmp/base/bin/geofixtures list
+          /tmp/base/bin/python -c "import geofixtures"
+
+  landfuse:
+    runs-on: ubuntu-latest
+    env:
+      LANDFUSE_REPOSITORY: dbeeking/landfuse
+      LANDFUSE_REF: bb8baa5d4b2c163efa97d6212f7ae98a09e4aa9f  # v0.1.0
+      GEOFIXTURES_REQUIRE_LANDFUSE: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - uses: mamba-org/setup-micromamba@v2
+        with:
+          environment-name: pdal
+          create-args: pdal
+          condarc: |
+            channels:
+              - conda-forge
+      - name: Link PDAL
+        run: sudo ln -s "$MAMBA_ROOT_PREFIX/envs/pdal/bin/pdal" /usr/local/bin/pdal
+      - name: Install
+        run: |
+          python -m pip install -e '.[all]'
+          python -m pip install "git+https://github.com/${LANDFUSE_REPOSITORY}@${LANDFUSE_REF}"
+      - name: Adapter tests
+        run: pytest tests/integration/test_landfuse_adapter.py -q
+      - name: Strict fixture run
+        run: >
+          geofixtures run --adapter landfuse --select suite:landfuse --timeout 300
+          --policy examples/landfuse/geofixtures-policy.toml --report landfuse.xml --format junit
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: landfuse-report
+          path: landfuse.xml

@@ -1,0 +1,8 @@
+# Features LandFuse doesn't have yet. Remove an entry when the feature lands,
+# or the strict run fails with stale_allowance.
+
+[allow_unsupported]
+"raster.grid.offset.001" = "No alignment diagnostic. Terrain is resampled to the image grid."
+"landcover.date_mismatch.001" = "Acquisition dates aren't compared."
+"lidar.density.001" = "Point density isn't reported."
+"lidar.vertical_mismatch.001" = "LiDAR heights aren't compared with a DEM."
