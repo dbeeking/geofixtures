@@ -105,4 +105,5 @@ def location_image(rng: np.random.Generator, size: int) -> np.ndarray:
         )
     )
     image += rng.normal(0.0, 1.0, image.shape)
-    return np.clip(np.rint(image), 1, 255).astype("uint8")
+    result: np.ndarray = np.clip(np.rint(image), 1, 255).astype("uint8")
+    return result
